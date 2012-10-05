@@ -1,0 +1,14 @@
+{
+  "name": "What's New In Spring MVC 3.2",
+  "description": "An overview of new features in Spring MVC 3.2",
+  "sections": [
+    {"section":"overview"},
+    {"section":"async"},
+    {"section":"error-handling"},
+    {"section":"content-negotiation"},
+    {"section":"matrix-variables"},
+    {"section":"spring-test-mvc"},
+    {"section":"other"},
+    {"section":"end"}
+  ]
+}
