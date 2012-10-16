@@ -22,13 +22,17 @@
  
     @@@ java
 
-    // TODO...
+    mockMvc.perform(get("/foo").accept("application/json"))
+      .andExpect(status().isOk())
+      .andExpect(content().mimeType("application/json"))
+      .andExpect(jsonPath("$.name").value("Lee"));
 
-!SLIDE small
-# For Much More Detail, come to:
-<br>
-<br>
-## <a href="http://www.springone2gx.com/conference/washington/2012/10/session?id=27664">Testing Web Applications with Spring 3.2</a>
-<br>
+!SLIDE
+[Testing Web Applications with Spring 3.2](http://www.springone2gx.com/conference/washington/2012/10/session?id=27664)
+
 Thursday 10:15
+<br>
+<br>
+Also see tests in [Spring MVC Showcase](https://github.com/springsource/spring-mvc-showcase)
+
 

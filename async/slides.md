@@ -112,9 +112,8 @@
 * Cannot forward (e.g. no JSP rendering) or rely on various other request properties
 * Response should really be finalized within container
 
-!SLIDE
-# Servlet 3 Async Support
-# in @MVC
+!SLIDE 
+# Servlet 3 Async Support<br> in Spring MVC
 
 !SLIDE small bullets incremental
 # `@RequestMapping` return values
@@ -147,7 +146,9 @@
 !SLIDE
 # Demo
 
-_Async request execution and log output_
+## _Async request execution and log output_
+
+[Spring MVC Showcase](https://github.com/springsource/spring-mvc-showcase)
 
 !SLIDE small bullets incremental
 # Exceptions From `Callable`
@@ -169,7 +170,7 @@ _Async request execution and log output_
 
 * Must have the `async-supported` flag in web.xml
 * Can be executed from more than one thread
-* `OncePerRequestFilter` and all Spring MVC filters have been updated
+* `OncePerRequestFilter` (+ all Spring MVC filters)<br> have been updated
 
 !SLIDE small bullets incremental
 # Handler Interception
@@ -181,17 +182,21 @@ _Async request execution and log output_
 !SLIDE small bullets incremental
 # Configuring Async Support
 
-* MVC Java Config and MVC namespace
-* `WebMvcConfigurer.configureAsyncSupport`
-* `<mvc:annotation-driven><async-support>`
-* Configure async timeout value
-* Set `AsyncTaskExecutor` for `Callable` processing
+* MVC Java Config<br> `WebMvcConfigurer.configureAsyncSupport`
+* MVC namespace<br> `async-support` sub-element of `annotation-driven`
+
+!SLIDE small bullets incremental
+# What Can Be Configured?
+
+* Async timeout value (milliseconds)
+* `AsyncTaskExecutor` for `Callable` processing
 
 !SLIDE small bullets incremental
 # `web.xml` Configuration
 
 * `async-supported` flag on all Filters and Servlet
 * `dispatcher-type` of `ASYNC` for Filters
+* Can be a bit repetitive
 
 !SLIDE small bullets incremental
 # `WebApplicationInitializer`
@@ -229,12 +234,13 @@ _Async request execution and log output_
 !SLIDE
 # References
 <br>
+Async tab in [Spring MVC Showcase](https://github.com/springsource/spring-mvc-showcase)
 <br>
-<a href="https://github.com/rstoyanchev/spring-mvc-chat">Chat Sample</a><br><br>(Simple in-memory and Redis-backed)
+[Chat Sample](https://github.com/rstoyanchev/spring-mvc-chat)
 <br>
+[Spring AMQP Stocks](https://github.com/SpringSource/spring-amqp-samples/tree/spring-mvc-async)
 <br>
-<a href="https://github.com/SpringSource/spring-amqp-samples/tree/spring-mvc-async">Spring AMQP Stocks</a>
-
+[Blog series](http://blog.springsource.org/2012/05/06/spring-mvc-3-2-preview-introducing-servlet-3-async-support/)
 
 
 

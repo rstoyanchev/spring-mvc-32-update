@@ -20,18 +20,24 @@
 !SLIDE small incremental bullets
 # Global `@ExceptionHandler` Methods
  
-* `@ControllerAdvice` component annotation
-* with `@ExceptionHandler` methods
-* also `@InitBinder` and `@ModelAttribute`
-* Useful for global exception handling, `DataBinder` initialization, and pre-handling
-* Nothing to configure, just declare `@ControllerAdvice`
+* `@ControllerAdvice` - component annotation
+* Add `@ExceptionHandler` methods
+* Nothing else to configure
+
+!SLIDE small incremental bullets
+# Other Uses Cases for `@ControllerAdvice`
+ 
+* `@InitBinder` methods
+* Global `DataBinder` initialization
+* `@ModelAttribute` methods
+* Global "pre" handling
 
 !SLIDE small incremental bullets
 # `ResponseEntityExceptionHandler`
 
 * Alternative to `DefaultHandlerExceptionResolver`
+* Protected methods for each exception return `ResponseEntity<Object>`
 * Makes it easy to write error details to the response body
-* By overriding protected methods
 
 !SLIDE small incremental bullets
 # Servlet Container Error Page
@@ -51,9 +57,9 @@
 !SLIDE
 # References
 
-See updated section on <a href="http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#mvc-exceptionhandlers">"Exception Handling"</a>
+See updated section on [Exception Handling](http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#mvc-exceptionhandlers) in reference docs
 
-
+Global exception in [Spring MVC Showcase](https://github.com/springsource/spring-mvc-showcase)
 
 
 

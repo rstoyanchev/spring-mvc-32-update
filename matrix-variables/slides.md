@@ -8,13 +8,15 @@
 * The term is not used in RFC URI spec
 * However it is most commonly used
 
-!SLIDE small
-# <a href="http://www.ietf.org/rfc/rfc2396.txt">RFC 2396</a> section 3.3
+!SLIDE
 ## "Each path segment may include a sequence of parameters, indicated by the semicolon ";" character. The parameters are not significant to the parsing of relativeb references."
 
-!SLIDE small
-# <a href="http://tools.ietf.org/html/rfc3986#section-3.3">RFC 3986 (section 3.3)</a>
+[RFC 2396](http://www.ietf.org/rfc/rfc2396.txt), section 3.3
+
+!SLIDE
 ## "The semicolon (";") and equals ("=") reserved characters are __often used to__ delimit parameters and parameter values applicable to that segment.  The comma (",") reserved character is __often used for__ similar purposes."
+
+[RFC 3986, section 3.3](http://tools.ietf.org/html/rfc3986#section-3.3)
 
 !SLIDE small incremental bullets
 # Two Types of Usage
@@ -27,13 +29,13 @@
 `/answers/id1;id2;id3;id4/comments`
 
 !SLIDE small incremental bullets
-# How To Use In @MVC
+# How To Use In Spring MVC
 
 * If you expect ";" content in a path segment
 * Represent the path segment with a URI variable
 * Declare one or more `@MatrixVariable` args
 
-!SLIDE smaller
+!SLIDE small
 # The Common Case
 
     @@@ java
@@ -48,7 +50,7 @@
 
     }
 
-!SLIDE smaller
+!SLIDE small
 # Obtain All Matrix Variables
 
     @@@ java
@@ -62,7 +64,7 @@
 
     }
 
-!SLIDE smaller
+!SLIDE small
 # Qualify Path Segment
 
     @@@ java
@@ -81,6 +83,4 @@
 !SLIDE
 # References
 <br>
-<br>
-Section on <a href="http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#mvc-ann-matrix-variables">"Matrix Variables"</a>
-
+Section on [Matrix Variables](http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#mvc-ann-matrix-variables) in reference docs

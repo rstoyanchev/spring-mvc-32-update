@@ -5,7 +5,7 @@
 # Prior to Spring 3.2
 
 * `@ResponseBody` used `'Accept'` header
-* `@RequestMapping(produces="")` did too
+* `@RequestMapping(produces="")` did likewise
 * While `ContentNegotiatingViewResolver` ...
 * offered many additional options
 
@@ -13,10 +13,10 @@
 # `ContentNegotiationStrategy`
 ## (Spring 3.2)
 
-* `'Accept'` Header
-* URL extension .xml, .json, etc
-* Request parameter `/accounts/1?format=json`
-* Fixed, i.e. a fallback option
+* By `'Accept'` Header
+* By URL extension (.xml, .json, etc)
+* By Request parameter, i.e. `/accounts/1?format=json`
+* Fixed content type, i.e. a fallback option
 
 !SLIDE small incremental bullets
 # `ContentNeogitationManager`
@@ -45,7 +45,9 @@
 # References
 <br>
 <br>
-See section on <a href="http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#new-in-3.2-webmvc-content-negotiation">"Configuring Content Negotiation"</a>
+See section on [Configuring Content Negotiation](http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#new-in-3.2-webmvc-content-negotiation) in reference docs
+<br>
+URL extension for content negotiation in [Spring MVC Showcase](https://github.com/springsource/spring-mvc-showcase)
 
 
 

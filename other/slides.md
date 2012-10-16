@@ -8,7 +8,7 @@
 * Supported with Jackson JSON library
 * Also `Jaxb2CollectionHttpMessageConverter`
 
-!SLIDE smaller
+!SLIDE small
 # `RestTemplate`
 ## Response with Generic Type
 
@@ -24,7 +24,7 @@
             "http://example.com/accounts",
             HttpMethod.GET, null, listOfInts);
 
-!SLIDE smaller
+!SLIDE small
 # `@RequestBody`
 ## Generic Method Argument
 
