@@ -90,10 +90,15 @@
 </br>
 </br>
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller bullets" ref="overview/slides/2">
+</div><div class="slide" data-transition="none"><div class="content" ref="overview/slides/2">
+<h1>presentation source</h1>
+
+<h2><a href="https://github.com/rstoyanchev/spring-mvc-32-update">https://github.com/rstoyanchev/spring-mvc-32-update</a></h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smaller bullets" ref="overview/slides/3">
 <h1>Quick Recap and Timeline</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller bullets incremental" ref="overview/slides/3">
+</div><div class="slide" data-transition="none"><div class="content smaller bullets incremental" ref="overview/slides/4">
 <h1>Spring 3.0 / Dec 2009</h1>
 
 <ul>
@@ -104,7 +109,7 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller bullets incremental" ref="overview/slides/4">
+</div><div class="slide" data-transition="none"><div class="content smaller bullets incremental" ref="overview/slides/5">
 <h1>Spring 3.1 / Dec 2011</h1>
 
 <ul>
@@ -115,7 +120,7 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller bullets incremental" ref="overview/slides/5">
+</div><div class="slide" data-transition="none"><div class="content smaller bullets incremental" ref="overview/slides/6">
 <h1>Spring 3.1 Recap</h1>
 
 <ul>
@@ -129,7 +134,7 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller bullets incremental" ref="overview/slides/6">
+</div><div class="slide" data-transition="none"><div class="content smaller bullets incremental" ref="overview/slides/7">
 <h1>Spring 3.2 / Dec 2012</h1>
 
 <ul>
@@ -282,9 +287,8 @@
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content" ref="async/slides/13">
-<h1>Servlet 3 Async Support</h1>
-
-<h1>in @MVC</h1>
+<h1>Servlet 3 Async Support<br> in Spring MVC</br>
+</h1>
 </div>
 </div><div class="slide" data-transition="none"><div class="content small bullets incremental" ref="async/slides/14">
 <h1><code>@RequestMapping</code> return values</h1>
@@ -329,7 +333,9 @@
 </div><div class="slide" data-transition="none"><div class="content" ref="async/slides/18">
 <h1>Demo</h1>
 
-<p><em>Async request execution and log output</em></p>
+<h2><em>Async request execution and log output</em></h2>
+
+<p><a href="https://github.com/springsource/spring-mvc-showcase">Spring MVC Showcase</a></p>
 </div>
 </div><div class="slide" data-transition="none"><div class="content small bullets incremental" ref="async/slides/19">
 <h1>Exceptions From <code>Callable</code></h1>
@@ -358,9 +364,10 @@
 <ul>
 <li>Must have the <code>async-supported</code> flag in web.xml</li>
 <li>Can be executed from more than one thread</li>
-<li><code>OncePerRequestFilter</code> and all Spring MVC filters have been updated</li>
-</ul>
+<li><code>OncePerRequestFilter</code> (+ all Spring MVC filters)<br> have been updated</br>
+</li>
 
+</ul>
 </div>
 </div><div class="slide" data-transition="none"><div class="content small bullets incremental" ref="async/slides/22">
 <h1>Handler Interception</h1>
@@ -372,28 +379,38 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content small bullets incremental" ref="async/slides/23">
+</div><div class="slide" data-transition="none">
+  <div class="content small bullets incremental" ref="async/slides/23">
 <h1>Configuring Async Support</h1>
 
 <ul>
-<li>MVC Java Config and MVC namespace</li>
-<li><code>WebMvcConfigurer.configureAsyncSupport</code></li>
-<li><code>&lt;mvc:annotation-driven&gt;&lt;async-support&gt;</code></li>
-<li>Configure async timeout value</li>
-<li>Set <code>AsyncTaskExecutor</code> for <code>Callable</code> processing</li>
+<li>MVC Java Config<br> <code>WebMvcConfigurer.configureAsyncSupport</code></br>
+<li>MVC namespace<br> <code>async-support</code> sub-element of <code>annotation-driven</code></br>
+</li>
+
+</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small bullets incremental" ref="async/slides/24">
+<h1>What Can Be Configured?</h1>
+
+<ul>
+<li>Async timeout value (milliseconds)</li>
+<li><code>AsyncTaskExecutor</code> for <code>Callable</code> processing</li>
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content small bullets incremental" ref="async/slides/24">
+</div><div class="slide" data-transition="none"><div class="content small bullets incremental" ref="async/slides/25">
 <h1><code>web.xml</code> Configuration</h1>
 
 <ul>
 <li><code>async-supported</code> flag on all Filters and Servlet</li>
 <li><code>dispatcher-type</code> of <code>ASYNC</code> for Filters</li>
+<li>Can be a bit repetitive</li>
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content small bullets incremental" ref="async/slides/25">
+</div><div class="slide" data-transition="none"><div class="content small bullets incremental" ref="async/slides/26">
 <h1><code>WebApplicationInitializer</code></h1>
 
 <h2>Abstract Class Hierarchy</h2>
@@ -406,7 +423,7 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller" ref="async/slides/26">
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="async/slides/27">
 <pre class="sh_java"><code>public class DispatcherServletInitializer extends
       AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -429,27 +446,31 @@
 }</code></pre>
 </div>
 </div><div class="slide" data-transition="none">
-  <div class="content" ref="async/slides/27">
+  <div class="content" ref="async/slides/28">
 <h1>References</h1>
 
 <br>
 
 
-<br>
-
-
-<p><a href="https://github.com/rstoyanchev/spring-mvc-chat">Chat Sample</a><br><br>(Simple in-memory and Redis-backed)</br>
+<p>Async tab in <a href="https://github.com/springsource/spring-mvc-showcase">Spring MVC Showcase</a></p>
 
 <br>
 
+
+<p><a href="https://github.com/rstoyanchev/spring-mvc-chat">Chat Sample</a></p>
 
 <br>
 
 
 <p><a href="https://github.com/SpringSource/spring-amqp-samples/tree/spring-mvc-async">Spring AMQP Stocks</a></p>
+
+<br>
+
+
+<p><a href="http://blog.springsource.org/2012/05/06/spring-mvc-3-2-preview-introducing-servlet-3-async-support/">Blog series</a></p>
 </br>
 </br>
-</br></p></br></br></div>
+</br></br></div>
 </div><div class="slide" data-transition="none"><div class="content subsection" ref="error-handling/slides/1">
 <h1>Error reporting in REST scenarios</h1>
 </div>
@@ -479,25 +500,34 @@
 <h1>Global <code>@ExceptionHandler</code> Methods</h1>
 
 <ul>
-<li><code>@ControllerAdvice</code> component annotation</li>
-<li>with <code>@ExceptionHandler</code> methods</li>
-<li>also <code>@InitBinder</code> and <code>@ModelAttribute</code></li>
-<li>Useful for global exception handling, <code>DataBinder</code> initialization, and pre-handling</li>
-<li>Nothing to configure, just declare <code>@ControllerAdvice</code></li>
+<li><code>@ControllerAdvice</code> - component annotation</li>
+<li>Add <code>@ExceptionHandler</code> methods</li>
+<li>Nothing else to configure</li>
 </ul>
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content small incremental bullets" ref="error-handling/slides/5">
-<h1><code>ResponseEntityExceptionHandler</code></h1>
+<h1>Other Uses Cases for <code>@ControllerAdvice</code></h1>
 
 <ul>
-<li>Alternative to <code>DefaultHandlerExceptionResolver</code></li>
-<li>Makes it easy to write error details to the response body</li>
-<li>By overriding protected methods</li>
+<li><code>@InitBinder</code> methods</li>
+<li>Global <code>DataBinder</code> initialization</li>
+<li><code>@ModelAttribute</code> methods</li>
+<li>Global "pre" handling</li>
 </ul>
 
 </div>
 </div><div class="slide" data-transition="none"><div class="content small incremental bullets" ref="error-handling/slides/6">
+<h1><code>ResponseEntityExceptionHandler</code></h1>
+
+<ul>
+<li>Alternative to <code>DefaultHandlerExceptionResolver</code></li>
+<li>Protected methods for each exception return <code>ResponseEntity&lt;Object&gt;</code></li>
+<li>Makes it easy to write error details to the response body</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content small incremental bullets" ref="error-handling/slides/7">
 <h1>Servlet Container Error Page</h1>
 
 <ul>
@@ -507,7 +537,7 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content small incremental bullets" ref="error-handling/slides/7">
+</div><div class="slide" data-transition="none"><div class="content small incremental bullets" ref="error-handling/slides/8">
 <h1>Custom Error Page (Servlet 3+)</h1>
 
 <ul>
@@ -518,10 +548,12 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="error-handling/slides/8">
+</div><div class="slide" data-transition="none"><div class="content" ref="error-handling/slides/9">
 <h1>References</h1>
 
-<p>See updated section on <a href="http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#mvc-exceptionhandlers">"Exception Handling"</a></p>
+<p>See updated section on <a href="http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#mvc-exceptionhandlers">Exception Handling</a> in reference docs</p>
+
+<p>Global exception in <a href="https://github.com/springsource/spring-mvc-showcase">Spring MVC Showcase</a></p>
 </div>
 </div><div class="slide" data-transition="none"><div class="content subsection" ref="content-negotiation/slides/1">
 <h1>Content Negotiation Strategies</h1>
@@ -531,7 +563,7 @@
 
 <ul>
 <li><code>@ResponseBody</code> used <code>'Accept'</code> header</li>
-<li><code>@RequestMapping(produces="")</code> did too</li>
+<li><code>@RequestMapping(produces="")</code> did likewise</li>
 <li>While <code>ContentNegotiatingViewResolver</code> ...</li>
 <li>offered many additional options</li>
 </ul>
@@ -543,10 +575,10 @@
 <h2>(Spring 3.2)</h2>
 
 <ul>
-<li><code>'Accept'</code> Header</li>
-<li>URL extension .xml, .json, etc</li>
-<li>Request parameter <code>/accounts/1?format=json</code></li>
-<li>Fixed, i.e. a fallback option</li>
+<li>By <code>'Accept'</code> Header</li>
+<li>By URL extension (.xml, .json, etc)</li>
+<li>By Request parameter, i.e. <code>/accounts/1?format=json</code></li>
+<li>Fixed content type, i.e. a fallback option</li>
 </ul>
 
 </div>
@@ -592,10 +624,15 @@
 <br>
 
 
-<p>See section on <a href="http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#new-in-3.2-webmvc-content-negotiation">"Configuring Content Negotiation"</a></p>
+<p>See section on <a href="http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#new-in-3.2-webmvc-content-negotiation">Configuring Content Negotiation</a> in reference docs</p>
+
+<br>
+
+
+<p>URL extension for content negotiation in <a href="https://github.com/springsource/spring-mvc-showcase">Spring MVC Showcase</a></p>
 </br>
 </br>
-</div>
+</br></div>
 </div><div class="slide" data-transition="none"><div class="content subsection" ref="matrix-variables/slides/1">
 <h1>Matrix Variables</h1>
 </div>
@@ -609,15 +646,15 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="matrix-variables/slides/3">
-<h1><a href="http://www.ietf.org/rfc/rfc2396.txt">RFC 2396</a> section 3.3</h1>
-
+</div><div class="slide" data-transition="none"><div class="content" ref="matrix-variables/slides/3">
 <h2>"Each path segment may include a sequence of parameters, indicated by the semicolon ";" character. The parameters are not significant to the parsing of relativeb references."</h2>
-</div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="matrix-variables/slides/4">
-<h1><a href="http://tools.ietf.org/html/rfc3986#section-3.3">RFC 3986 (section 3.3)</a></h1>
 
+<p><a href="http://www.ietf.org/rfc/rfc2396.txt">RFC 2396</a>, section 3.3</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="matrix-variables/slides/4">
 <h2>"The semicolon (";") and equals ("=") reserved characters are <strong>often used to</strong> delimit parameters and parameter values applicable to that segment.  The comma (",") reserved character is <strong>often used for</strong> similar purposes."</h2>
+
+<p><a href="http://tools.ietf.org/html/rfc3986#section-3.3">RFC 3986, section 3.3</a></p>
 </div>
 </div><div class="slide" data-transition="none">
   <div class="content small incremental bullets" ref="matrix-variables/slides/5">
@@ -636,7 +673,7 @@
 </ul>
 </div>
 </div><div class="slide" data-transition="none"><div class="content small incremental bullets" ref="matrix-variables/slides/6">
-<h1>How To Use In @MVC</h1>
+<h1>How To Use In Spring MVC</h1>
 
 <ul>
 <li>If you expect ";" content in a path segment</li>
@@ -645,7 +682,7 @@
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller" ref="matrix-variables/slides/7">
+</div><div class="slide" data-transition="none"><div class="content small" ref="matrix-variables/slides/7">
 <h1>The Common Case</h1>
 
 <pre class="sh_java"><code>// GET /pets/42;q=11;r=22
@@ -659,7 +696,7 @@ public void findPet(
 
 }</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller" ref="matrix-variables/slides/8">
+</div><div class="slide" data-transition="none"><div class="content small" ref="matrix-variables/slides/8">
 <h1>Obtain All Matrix Variables</h1>
 
 <pre class="sh_java"><code>// GET /owners/42;q=11;r=12/pets/21;q=22;s=23
@@ -672,7 +709,7 @@ public void findPet(
 
 }</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller" ref="matrix-variables/slides/9">
+</div><div class="slide" data-transition="none"><div class="content small" ref="matrix-variables/slides/9">
 <h1>Qualify Path Segment</h1>
 
 <pre class="sh_java"><code>// GET /owners/42;q=11/pets/21;q=22
@@ -687,18 +724,13 @@ public void findPet(
 
 }</code></pre>
 </div>
-</div><div class="slide" data-transition="none">
-  <div class="content" ref="matrix-variables/slides/10">
+</div><div class="slide" data-transition="none"><div class="content" ref="matrix-variables/slides/10">
 <h1>References</h1>
 
 <br>
 
 
-<br>
-
-
-<p>Section on <a href="http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#mvc-ann-matrix-variables">"Matrix Variables"</a></p>
-</br>
+<p>Section on <a href="http://static.springsource.org/spring-framework/docs/3.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#mvc-ann-matrix-variables">Matrix Variables</a> in reference docs</p>
 </br>
 </div>
 </div><div class="slide" data-transition="none"><div class="content subsection" ref="spring-test-mvc/slides/1">
@@ -730,27 +762,27 @@ public void findPet(
 <h1>Example</h1>
 
 <pre class="sh_java"><code>
-// TODO...</code></pre>
+mockMvc.perform(get("/foo").accept("application/json"))
+  .andExpect(status().isOk())
+  .andExpect(content().mimeType("application/json"))
+  .andExpect(jsonPath("$.name").value("Lee"));</code></pre>
 </div>
 </div><div class="slide" data-transition="none">
-  <div class="content small" ref="spring-test-mvc/slides/5">
-<h1>For Much More Detail, come to:</h1>
-
-<br>
-
-
-<br>
-
-
-<h2><a href="http://www.springone2gx.com/conference/washington/2012/10/session?id=27664">Testing Web Applications with Spring 3.2</a></h2>
-
-<br>
-
+  <div class="content" ref="spring-test-mvc/slides/5">
+<p><a href="http://www.springone2gx.com/conference/washington/2012/10/session?id=27664">Testing Web Applications with Spring 3.2</a></p>
 
 <p>Thursday 10:15</p>
+
+<br>
+
+
+<br>
+
+
+<p>Also see tests in <a href="https://github.com/springsource/spring-mvc-showcase">Spring MVC Showcase</a></p>
 </br>
 </br>
-</br></div>
+</div>
 </div><div class="slide" data-transition="none"><div class="content subsection" ref="other/slides/1">
 <h1>Other Improvements</h1>
 </div>
@@ -764,7 +796,7 @@ public void findPet(
 </ul>
 
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller" ref="other/slides/3">
+</div><div class="slide" data-transition="none"><div class="content small" ref="other/slides/3">
 <h1><code>RestTemplate</code></h1>
 
 <h2>Response with Generic Type</h2>
@@ -780,7 +812,7 @@ ResponseEntity&lt;List&lt;Integer&gt;&gt; result =
         "http://example.com/accounts",
         HttpMethod.GET, null, listOfInts);</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content smaller" ref="other/slides/4">
+</div><div class="slide" data-transition="none"><div class="content small" ref="other/slides/4">
 <h1><code>@RequestBody</code></h1>
 
 <h2>Generic Method Argument</h2>
@@ -810,16 +842,12 @@ public void handle(@RequestBody List&lt;Integer&gt; ints) {
 <br><br>
 
 
-<p>Twitter: @rstoya05</p>
+<p>Twitter</p>
 
-<br>
-
-
-<p>Slides:<br>
-<a href="https://github.com/rstoyanchev/spring-mvc-32-update">https://github.com/rstoyanchev/spring-mvc-32-update</a></br>
-</p>
+<p><a href="http://twitter.com/rstoya05">@rstoya05</a></p>
 </br>
-</br></br></div>
+</br>
+</div>
 </div></div>
 
 </body>
