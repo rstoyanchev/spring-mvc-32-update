@@ -1,4 +1,12 @@
 
+!SLIDE small bullets incremental
+# Next?
+
+* WebSocket support
+* Servlet 3.1
+* Externalized request mappings
+* Declarative caching
+
 !SLIDE subsection
 # Questions?
 
